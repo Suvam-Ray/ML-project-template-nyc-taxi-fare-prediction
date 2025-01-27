@@ -21,7 +21,7 @@ class PredictionInput(BaseModel):
 
 
 # Load the pre-trained RandomForest model
-model_path = "model.joblib"
+model_path = "models/best_model.joblib"
 model = load(model_path)
 
 @app.get("/")
