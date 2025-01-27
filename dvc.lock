@@ -13,26 +13,26 @@ stages:
       md5: 1e3875112afd42d30fa701c1132201ce
       size: 1126
   train_model:
-    cmd: python .\src\models\train_model.py .\data\processed\
+    cmd: python ./src/models/train_model.py ./data/processed/
     deps:
-    - path: .\data\processed\
+    - path: ./data/processed/
       hash: md5
-      md5: 6ffbaaad7b4ac6e1afabed19a80b2560.dir
-      size: 0
-      nfiles: 1
-    - path: .\src\models\train_model.py
+      md5: 8bbba1455d71a6683189715cb8310cf9.dir
+      size: 3179426
+      nfiles: 3
+    - path: ./src/models/train_model.py
       hash: md5
       md5: d388598597a869c345dfdc9b02aec9f7
       size: 3823
   push_model:
-    cmd: python .\src\models\push_model.py .\data\processed\
+    cmd: python ./src/models/push_model.py ./data/processed/
     deps:
-    - path: .\models\
+    - path: ./models/
       hash: md5
       md5: d751713988987e9331980363e24189ce.dir
       size: 0
       nfiles: 0
-    - path: .\src\models\train_model.py
+    - path: ./src/models/train_model.py
       hash: md5
       md5: d388598597a869c345dfdc9b02aec9f7
       size: 3823
