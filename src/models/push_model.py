@@ -20,5 +20,5 @@ local_model_path = 'models/model.joblib'
 s3_bucket_name = 'nyc-taxi-campusx'
 s3_file_path = 'models/model.joblib' 
 
-upload_to_s3(local_model_path, s3_bucket_name, s3_file_path)
-shutil.copy(local_model_path, 'model.joblib')
+#upload_to_s3(local_model_path, s3_bucket_name, s3_file_path)
+shutil.copy(local_model_path, 'models/best_model.joblib')
