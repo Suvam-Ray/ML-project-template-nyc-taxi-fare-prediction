@@ -1,14 +1,14 @@
 schema: '2.0'
 stages:
   build_features:
-    cmd: python .\src\features\build_features.py
+    cmd: python ./src/features/build_features.py
     deps:
-    - path: .\data\raw\
+    - path: ./data/raw/
       hash: md5
       md5: 54b219a513ac09c8a1cc0d2ac123fe26.dir
       size: 2458652
       nfiles: 3
-    - path: .\src\features\build_features.py
+    - path: ./src/features/build_features.py
       hash: md5
       md5: 1e3875112afd42d30fa701c1132201ce
       size: 1126
