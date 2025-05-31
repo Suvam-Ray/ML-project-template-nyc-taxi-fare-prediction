@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: seldon-alert-rules
+  namespace: seldon-monitoring
+  labels:
+    role: alert-rules
+spec:
+  groups:
+    - name: seldon.rules
+      rules:
+        - alert: ModelPredictionLatencyHigh
+          expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) > 0.5
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High model prediction latency"
+            description: "95th percentile prediction latency is above 0.5s for over 1 minute."
